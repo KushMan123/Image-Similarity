@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Playball&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline: dashed 1px black;
+}
+
+.body.grid {
+	display: block;
+}
+
+.container {
+	height: 350px;
+	width: 430px;
+}
+
+.container .wrapper {
+	position: relative;
+	height: 300px;
+	width: 100%;
+	border-radius: 10px;
+	background: #fff;
+	border: 2px dashed #c3cdda;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.wrapper.active {
+	border: none;
+}
+
+.wrapper .image {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrapper .image img {
+	display: none;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.wrapper.active .image img {
+	display: block;
+}
+
+.wrapper .icon {
+	font-size: 100px;
+}
+
+.wrapper .icon img {
+	display: block;
+	filter: invert(45%) sepia(38%) saturate(6283%) hue-rotate(239deg)
+		brightness(99%) contrast(105%);
+}
+
+.wrapper.active .icon img {
+	display: none;
+}
+
+.wrapper .text {
+	font-size: 20px;
+	font-weight: 500;
+	color: #58587b;
+}
+
+.wrapper #cancel-btn {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	font-size: 20px;
+	cursor: pointer;
+	color: #9658fe;
+	display: none;
+}
+
+.wrapper.active:hover #cancel-btn {
+	display: block;
+}
+
+.wrapper #cancel-btn:hover {
+	color: #e74c3c;
+}
+
+.wrapper .file-name {
+	position: absolute;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	color: #fff;
+	padding: 7px 0;
+	font-size: 14px;
+	display: none;
+	background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+.wrapper.active:hover .file-name {
+	display: block;
+}
+
+.button {
+	margin-top: 30px;
+	width: 100%;
+	height: 50px;
+	display: block;
+	border: none;
+	outline: none;
+	border-radius: 25px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1;
+	text-transform: uppercase;
+	background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+	cursor: pointer;
+	transition: all 0.2s ease-in;
+}
+.button:hover {
+	transform: scale(1.05);
+}
