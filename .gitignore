@@ -14,3 +14,27 @@
 /Siamese Network/archive.zip
 /Siamese Network/archive (1).zip
 /Siamese Network/Untitled.ipynb
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/react/my-app/node_modules
+/react/my-app/.pnp
+.pnp.js
+
+# testing
+/react/my-app/coverage
+
+# production
+/react/my-app/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
