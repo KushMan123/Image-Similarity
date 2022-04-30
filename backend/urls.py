@@ -15,8 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+from rest_framework import routers
+from api import views
+
+router = routers.DefaultRouter()
+router.register(r'kingdoms', views.KingdomView, 'kingdom')
+router.register(r'phylums', views.PhylumView, 'phylum')
+router.register(r'classes', views.ClassNameView, 'class')
+router.register(r'orders', views.OrderView, 'order')
+router.register(r'genuses', views.GenusView, 'genus')
+router.register(r'families', views.FamilyView, 'family')
+router.register(r'scientificnames', views.ScientificNameView, 'scientificname')
+router.register(r'classifications', views.ClassificationView, 'classification')
+router.register(r'conservationstatuses', views.ConservationStatusView, 'conservationstatus')
+router.register(r'facts', views.FactView, 'fact')
+router.register(r'locations', views.LocationView, 'location')
+router.register(r'animals', views.AnimalView, 'animal')
+router.register(r'images', views.ImageView, 'image')
 
 urlpatterns = [
-    path('api/', include('api.urls')),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

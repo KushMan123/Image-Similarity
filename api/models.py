@@ -81,7 +81,7 @@ class ConservationStatus(models.Model):
 class Fact(models.Model):
     facts_for = models.CharField(max_length=50, null=True, blank=True)
     main_prey = models.CharField(max_length=50, null=True, blank=True)
-    distint_feature = models.CharField(max_length=50, null=True, blank=True)
+    distinct_feature = models.CharField(max_length=50, null=True, blank=True)
     habitat = models.CharField(max_length=50, null=True, blank=True)
     predators = models.CharField(max_length=50, null=True, blank=True)
     diet = models.CharField(max_length=50, null=True, blank=True)
@@ -125,7 +125,7 @@ class Image(models.Model):
     animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     def __str__(self):
-        return self.image_of
+        return self.animal
 
 # class AnimalLocation(models.Model):
 #     animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING, null=True, blank=True)
