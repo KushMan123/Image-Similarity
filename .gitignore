@@ -19,8 +19,7 @@
 
 # dependencies
 /react/my-app/node_modules
-/react/my-app/.pnp
-.pnp.js
+
 
 # testing
 /react/my-app/coverage
