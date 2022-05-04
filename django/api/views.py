@@ -48,6 +48,10 @@ class FactView(viewsets.ModelViewSet):
     queryset = Fact.objects.all()
     serializer_class = FactSerializer
 
+class PhysicalCharacteristicsView(viewsets.ModelViewSet):
+    queryset = PhysicalCharacteristics.objects.all()
+    serializer_class = PhysicalCharacteristicsSerializer
+
 class LocationView(viewsets.ModelViewSet):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer

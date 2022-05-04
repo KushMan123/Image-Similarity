@@ -33,6 +33,9 @@ class ConservationStatusAdmin(admin.ModelAdmin):
 class FactAdmin(admin.ModelAdmin):
     list_display = ('id', 'facts_for')
 
+class PhysicalCharacteristicsAdmin(admin.ModelAdmin):
+    list_display = ('id', 'characters_of')
+
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
 
@@ -53,6 +56,7 @@ admin.site.register(ScientificName, ScientificNameAdmin)
 admin.site.register(Classification, ClassificationAdmin)
 admin.site.register(ConservationStatus, ConservationStatusAdmin)
 admin.site.register(Fact, FactAdmin)
+admin.site.register(PhysicalCharacteristics, PhysicalCharacteristicsAdmin)
 admin.site.register(Location, LocationAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(Animal, AnimalAdmin)

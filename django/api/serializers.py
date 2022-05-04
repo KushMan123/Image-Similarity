@@ -60,8 +60,13 @@ class ConservationStatusSerializer(serializers.ModelSerializer):
 class FactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fact
-        fields = ['id', 'facts_for', 'main_prey', 'distinct_feature', 'habitat', 'predators',
-                  'diet', 'average_litter_size', 'lifestyle', 'favourite_food', 'type', 'slogan']
+        fields = ['id', 'facts_for', 'prey', 'distinct_feature', 'habitat',
+                  'diet', 'average_litter_size', 'lifestyle', 'favourite_food', 'group', 'name_of_young', 'group_behavior']
+
+class PhysicalCharacteristicsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PhysicalCharacteristics
+        fields = ['id', 'characters_of', 'skin_type', 'top_speed', 'lifespan', 'weight', 'height']
 
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
