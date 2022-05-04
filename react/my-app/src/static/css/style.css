@@ -179,6 +179,7 @@ body {
 .description {
 	padding: 0px 30px 20px;
 	text-align: justify;
+	height: 360px;
 }
 
 .description .content {

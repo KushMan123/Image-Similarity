@@ -38,10 +38,17 @@ const App = () => {
 		console.log(imageUploadStatus);
 		if (imageUploadStatus) {
 			setisLoading(true);
-			setTimeout(() => {
-				setResponseData(response);
-				setisLoading(false);
-			}, 5000);
+			fetch("http://127.0.0.1:8000/api/animals/")
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data[0]);
+					setResponseData(data[0]);
+					setisLoading(false);
+				});
+			// setTimeout(() => {
+			// 	setResponseData(response);
+			// 	setisLoading(false);
+			// }, 5000);
 		}
 	}
 
@@ -71,14 +78,12 @@ const App = () => {
 				return (
 					<GridContainer>
 						<ImageViewer imageSrc={imageSrc} animalName={responseData.name} />
-						<AdditionalDescription
-							description={responseData["additional-description"]}
-						/>
+						<AdditionalDescription />
 						<Description
 							detail={responseData.description}
-							status={responseData.conservation}
+							status={responseData.conservation_status}
 						/>
-						<ClassSimilarity data={responseData["Class-Similarity"]} />
+						<ClassSimilarity data={response["Class-Similarity"]} />
 						<ImageSimilarity data={responseData["Image-Similarity"]} />
 					</GridContainer>
 				);
