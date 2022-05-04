@@ -25,16 +25,16 @@ class ScientificNameAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
 
 class ClassificationAdmin(admin.ModelAdmin):
-    list_display = ('id', 'classification_for')
+    list_display = ('id', 'animal')
 
 class ConservationStatusAdmin(admin.ModelAdmin):
     list_display = ('id', 'status')
 
 class FactAdmin(admin.ModelAdmin):
-    list_display = ('id', 'facts_for')
+    list_display = ('id', 'animal')
 
 class PhysicalCharacteristicsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'characters_of')
+    list_display = ('id', 'animal')
 
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
@@ -43,7 +43,7 @@ class ImageAdmin(admin.ModelAdmin):
     list_display = ('id', 'animal', 'image')
 
 class AnimalAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description', 'classification', 'conservation_status', 'locations')
+    list_display = ('id', 'name', 'description', 'classification', 'conservation_status', 'locations', 'physical_characteristics')
 
 # Register your models here.
 admin.site.register(Kingdom, KingdomAdmin)
