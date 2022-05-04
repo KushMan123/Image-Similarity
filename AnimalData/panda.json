@@ -1,0 +1,30 @@
+{
+    "classification": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Mammalia",
+        "order": "Carnivora",
+        "family": "Ursidae",
+        "genus": "Ailuropoda",
+        "scientific name": "Ailuropoda melanoleuca"
+    },
+    "conservation-status": "Not Extinct",
+    "locations": [
+        "South-West China"
+    ],
+    "facts": {
+        "main prey": "Bamboo",
+        "distinctive feature": "Black and white markings",
+        "habitat": "Forest",
+        "diet": "Omnivore",
+        "average litter size": "5",
+        "name of young": "Cub"
+    },
+    "physical characteristics": {
+        "skin type": "Fur",
+        "top speed": "31 mph",
+        "lifespan": "20 years",
+        "weight": "70kg - 120kg",
+        "height": "60cm - 90cm"
+    }
+}

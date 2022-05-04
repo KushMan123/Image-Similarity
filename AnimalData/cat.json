@@ -1,0 +1,36 @@
+{
+    "classification": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Mammalia",
+        "order": "Carnivora",
+        "family": "Felidae",
+        "genus": "Felis",
+        "scientific name": "Felis Catus"
+    },
+    "conservation-status": "Not listed",
+    "locations": [
+        "Europe",
+        "Africa",
+        "Asia",
+        "South-America",
+        "North-America",
+        "Oceania"
+    ],
+    "facts": {
+        "main prey": "Rodents, Mice and Rats",
+        "distinctive feature": "Toes, Paws, Sharp teeth and Feline eyes",
+        "habitat": "Human habitation, Forests",
+        "diet": "Omnivore",
+        "average litter size": "5",
+        "lifestyle": "Solitude",
+        "name of young": "Kitten"
+    },
+    "physical characteristics": {
+        "skin type": "Fur",
+        "top speed": "30 mph",
+        "lifespan": "12 - 18 years",
+        "weight": "2.6kg - 4.5kg",
+        "height": "23cm - 25cm"
+    }
+}

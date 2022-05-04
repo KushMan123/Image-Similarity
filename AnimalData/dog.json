@@ -1,0 +1,36 @@
+{
+    "classification": {
+        "kingdom": "Animalia",
+        "phylum": "Chordata",
+        "class": "Mammalia",
+        "order": "Carnivora",
+        "family": "Canidae",
+        "genus": "Canis",
+        "scientific name": "Canis Lupus"
+    },
+    "conservation-status": "Not listed",
+    "locations": [
+        "Europe",
+        "Africa",
+        "Asia",
+        "South-America",
+        "North-America",
+        "Oceania"
+    ],
+    "facts": {
+        "main prey": "Rodents, Mice and Rats",
+        "distinctive feature": "Toes, Paws, Sharp teeth and Feline eyes",
+        "habitat": "Human habitation",
+        "diet": "Omnivore",
+        "average litter size": "5-6",
+        "lifestyle": "Domestic",
+        "name of young": "Puppy"
+    },
+    "physical characteristics": {
+        "skin type": "Fur",
+        "top speed": "30 mph",
+        "lifespan": "10 - 13 years",
+        "weight": "5kg - 25kg",
+        "height": "15cm - 110cm"
+    }
+}
