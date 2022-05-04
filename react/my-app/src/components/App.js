@@ -45,10 +45,6 @@ const App = () => {
 					setResponseData(data[0]);
 					setisLoading(false);
 				});
-			// setTimeout(() => {
-			// 	setResponseData(response);
-			// 	setisLoading(false);
-			// }, 5000);
 		}
 	}
 
