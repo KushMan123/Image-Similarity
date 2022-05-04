@@ -3,6 +3,7 @@
 		"name": "Fox",
 		"ImageSrc": "/images/animal.jpg",
 		"description": "Foxes are small to medium-sized, omnivorous mammals belonging to several genera of the family Canidae. They have a flattened skull, upright triangular ears, a pointed, slightly upturned snout, and a long bushy tail (or brush).The global distribution of foxes, together with their widespread reputation for cunning, has contributed to their prominence in popular culture and folklore in many societies around the world",
+		"conservation": "not listed",
 		"additional-description": {
 			"Scientific": [
 				{
@@ -24,6 +25,10 @@
 				{
 					"label": "Family",
 					"value": "Boivdae"
+				},
+				{
+					"label": "Scientific Name",
+					"value": "Boivdae Boivdae"
 				}
 			],
 			"Physical": [
@@ -68,9 +73,26 @@
 				{
 					"label": "Average Litter Size",
 					"value": "1"
+				},
+				{
+					"label": "Main Prey",
+					"value": "Grass Shoots Seeds"
+				},
+				{
+					"label": "Distinctive Feature",
+					"value": "Long Legs and curved antlers"
+				},
+				{
+					"label": "Habitat",
+					"value": "Forest and Grassland"
+				},
+				{
+					"label": "Lifestyle",
+					"value": "Herd"
 				}
 			],
-			"Location": ["Africa", "Asia", "Eurasia", "North America"]
+			"Location": ["Africa", "Asia", "Eurasia", "North America"],
+			"Location Image": "/images/map.jpg"
 		},
 		"Class-Similarity": [
 			{

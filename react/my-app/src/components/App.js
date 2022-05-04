@@ -74,7 +74,10 @@ const App = () => {
 						<AdditionalDescription
 							description={responseData["additional-description"]}
 						/>
-						<Description detail={responseData.description} />
+						<Description
+							detail={responseData.description}
+							status={responseData.conservation}
+						/>
 						<ClassSimilarity data={responseData["Class-Similarity"]} />
 						<ImageSimilarity data={responseData["Image-Similarity"]} />
 					</GridContainer>

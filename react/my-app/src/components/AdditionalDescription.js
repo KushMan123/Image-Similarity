@@ -67,13 +67,33 @@ const AdditionalDescription = (props) => {
 								})}
 							</DescriptionHeading>
 							<DescriptionHeading class='location' title='Locations'>
-								{responseData.Location.map((content, key) => {
-									return (
-										<div className='content' key={key}>
-											{content}
-										</div>
-									);
-								})}
+								<div class='row'>
+									<div class='col'>
+										{responseData.Location.map((content, key) => {
+											if (key % 2 !== 0) {
+												return (
+													<div className='content' key={key}>
+														{content}
+													</div>
+												);
+											}
+										})}
+									</div>
+									<div class='col'>
+										{responseData.Location.map((content, key) => {
+											if (key % 2 === 0) {
+												return (
+													<div className='content' key={key}>
+														{content}
+													</div>
+												);
+											}
+										})}
+									</div>
+								</div>
+								<div class='image'>
+									<img src={responseData["Location Image"]} />
+								</div>
 							</DescriptionHeading>
 						</div>
 					</div>
