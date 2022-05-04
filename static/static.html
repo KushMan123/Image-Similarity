@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script
+			src="https://kit.fontawesome.com/2fff558d4c.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Image Similarity</title>
+	</head>
+	<body>
+		<div class="body">
+			<div class="container">
+				<div class="wrapper">
+					<div class="image">
+						<img src="" alt="" />
+					</div>
+					<div class="content">
+						<div class="icon">
+							<img src="images/cloud-arrow-up-solid.svg" />
+						</div>
+						<div class="text">No file Choosen</div>
+					</div>
+					<div id="cancel-btn">
+						<i class="fas fa-times"></i>
+					</div>
+					<div class="file-name">File name Here</div>
+				</div>
+				<input id="default-btn" type="file" hidden />
+				<button class="button" onclick="defaultBtnActive()" id="custom-btn">
+					Choose a File
+				</button>
+				<button class="button" onclick="modelBtnClick()" id="model-btn">
+					Get My Animal
+				</button>
+			</div>
+		</div>
+	</body>
+
+	<script src="script.js"></script>
+</html>

@@ -1,0 +1,134 @@
+[
+	{
+		"name": "Fox",
+		"ImageSrc": "/images/animal.jpg",
+		"description": "Foxes are small to medium-sized, omnivorous mammals belonging to several genera of the family Canidae. They have a flattened skull, upright triangular ears, a pointed, slightly upturned snout, and a long bushy tail (or brush).The global distribution of foxes, together with their widespread reputation for cunning, has contributed to their prominence in popular culture and folklore in many societies around the world",
+		"conservation": "not listed",
+		"additional-description": {
+			"Scientific": [
+				{
+					"label": "Kingdom",
+					"value": "Animalia"
+				},
+				{
+					"label": "Phylum",
+					"value": "Chordata"
+				},
+				{
+					"label": "Class",
+					"value": "Mammalia"
+				},
+				{
+					"label": "Order",
+					"value": "Artiodactula"
+				},
+				{
+					"label": "Family",
+					"value": "Boivdae"
+				},
+				{
+					"label": "Scientific Name",
+					"value": "Boivdae Boivdae"
+				}
+			],
+			"Physical": [
+				{
+					"label": "Color",
+					"value": "Brown Red Tan"
+				},
+				{
+					"label": "Skin Type",
+					"value": "Fur"
+				},
+				{
+					"label": "Lifespan",
+					"value": "10-25 years"
+				},
+				{
+					"label": "Weight",
+					"value": "500kg-900kg"
+				},
+				{
+					"label": "Height",
+					"value": "1m-1.5m"
+				}
+			],
+			"Facts": [
+				{
+					"label": "Main Prey",
+					"value": "Grass Shoots Seeds"
+				},
+				{
+					"label": "Distinctive Feature",
+					"value": "Long Legs and curved antlers"
+				},
+				{
+					"label": "Habitat",
+					"value": "Forest and Grassland"
+				},
+				{
+					"label": "Lifestyle",
+					"value": "Herd"
+				},
+				{
+					"label": "Average Litter Size",
+					"value": "1"
+				},
+				{
+					"label": "Main Prey",
+					"value": "Grass Shoots Seeds"
+				},
+				{
+					"label": "Distinctive Feature",
+					"value": "Long Legs and curved antlers"
+				},
+				{
+					"label": "Habitat",
+					"value": "Forest and Grassland"
+				},
+				{
+					"label": "Lifestyle",
+					"value": "Herd"
+				}
+			],
+			"Location": ["Africa", "Asia", "Eurasia", "North America"],
+			"Location Image": "/images/map.jpg"
+		},
+		"Class-Similarity": [
+			{
+				"class": "Fox",
+				"percent": 90
+			},
+			{
+				"class": "Jackel",
+				"percent": 70
+			},
+			{
+				"class": "Dog",
+				"percent": 50
+			},
+			{
+				"class": "Tiger",
+				"percent": 30
+			},
+			{
+				"class": "Leopard",
+				"percent": 40
+			}
+		],
+		"Image-Similarity": [
+			{
+				"imageSrc": "/images/1.jpg",
+				"percent": 65
+			},
+			{
+				"imageSrc": "/images/2.jpg",
+				"percent": 80
+			},
+			{
+				"imageSrc": "/images/3.jpg",
+				"percent": 78
+			}
+		]
+	}
+]
