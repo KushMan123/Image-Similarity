@@ -1,4 +1,4 @@
-from unicodedata import name
+from tokenize import group
 from django.db import models
 
 class Kingdom(models.Model):
@@ -80,19 +80,32 @@ class ConservationStatus(models.Model):
 
 class Fact(models.Model):
     facts_for = models.CharField(max_length=50, null=True, blank=True)
-    main_prey = models.CharField(max_length=50, null=True, blank=True)
+    prey = models.CharField(max_length=50, null=True, blank=True)
     distinct_feature = models.CharField(max_length=50, null=True, blank=True)
     habitat = models.CharField(max_length=50, null=True, blank=True)
-    predators = models.CharField(max_length=50, null=True, blank=True)
     diet = models.CharField(max_length=50, null=True, blank=True)
     average_litter_size = models.CharField(max_length=50, null=True, blank=True)
     lifestyle = models.CharField(max_length=50, null=True, blank=True)
     favourite_food = models.CharField(max_length=50, null=True, blank=True)
-    type = models.CharField(max_length=50, null=True, blank=True)
-    slogan = models.CharField(max_length=50, null=True, blank=True)
+    group = models.CharField(max_length=50, null=True, blank=True)
+    name_of_young = models.CharField(max_length=50, null=True, blank=True)
+    group_behavior = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return self.facts_for
+
+
+class PhysicalCharacteristics(models.Model):
+    characters_of = models.CharField(max_length=50, null=True, blank=True)
+    color = models.CharField(max_length=50, null=True, blank=True)
+    skin_type = models.CharField(max_length=50, null=True, blank=True)
+    top_speed = models.CharField(max_length=50, null=True, blank=True)
+    lifespan = models.CharField(max_length=50, null=True, blank=True)
+    weight = models.CharField(max_length=50, null=True, blank=True)
+    height = models.CharField(max_length=50, null=True, blank=True)
+   
+    def __str__(self):
+        return self.characters_of
 
 
 class Location(models.Model):
