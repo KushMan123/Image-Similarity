@@ -5,7 +5,7 @@ import os
 
 def main():
     cwd = os.getcwd()
-    dpath = os.path.join(cwd, "..", "AnimalData")
+    dpath = os.path.join(cwd, "..", "AnimalData", "description")
     descriptions = {}
     for animal in os.listdir(dpath):
         name = animal.split(".")[0]

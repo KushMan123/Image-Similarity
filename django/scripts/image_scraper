@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def main():
     driver = selenium.webdriver.Chrome("./scripts/chromedriver")
 
-    path = os.path.join(os.getcwd(), "..", "AnimalData")
+    path = os.path.join(os.getcwd(), "..", "AnimalData", "images")
     
     for animal in os.listdir(path):
         if os.path.isdir(os.path.join(path, animal)):

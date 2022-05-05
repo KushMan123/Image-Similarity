@@ -94,7 +94,3 @@ def run():
         animal.location.add(*locations)
         print(animal)
 
-
-
-if __name__ == "__main__":
-    main()
