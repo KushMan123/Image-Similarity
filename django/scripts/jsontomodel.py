@@ -41,8 +41,9 @@ def create_fact(fact):
     )
 
 def create_phy_char(pc):
+    
     return PhysicalCharacteristics.objects.create(
-        color=" ".join(re.findall("[A-Z][^A-Z]*",pc.get("color") or " ")),
+        color=" ".join(re.findall('[A-Z][^A-Z]*',pc.get("color") or "")),
         skin_type=pc.get("skin type"),
         top_speed=pc.get("top speed"),
         lifespan=pc.get("lifespan"),

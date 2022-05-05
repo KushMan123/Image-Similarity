@@ -117,6 +117,7 @@ class Animal(models.Model):
     conservation_status = models.ForeignKey(ConservationStatus, on_delete=models.DO_NOTHING, null=True, blank=True)
     facts = models.OneToOneField(Fact, on_delete=models.DO_NOTHING, null=True, blank=True)
     location = models.ManyToManyField(Location)
+    locationimage = models.ImageField(upload_to="images/locations/", null=True)
     physical_characteristics = models.OneToOneField(PhysicalCharacteristics, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     def __str__(self):
@@ -130,7 +131,7 @@ class Animal(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/animals/')
     animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     def __str__(self):
