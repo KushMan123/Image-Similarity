@@ -1,6 +1,7 @@
 from api.models import *
 import json
 import os
+import re
 
 def create_classification(classification):
     attrmap = [(Kingdom, "kingdom"), 
@@ -32,16 +33,17 @@ def create_fact(fact):
         habitat=fact.get("habitat"),
         diet=fact.get("diet"),
         lifestyle=fact.get("lifestyle"),
-        favourite_food=fact.get("favirite food"),
-        average_litter_size=fact.get("acerage litter size"),
+        favourite_food=fact.get("favorite food"),
+        average_litter_size=fact.get("average litter size"),
         group=fact.get("group"),
         name_of_young=fact.get("name of young"),
         group_behavior=fact.get("group behaviour")
     )
 
 def create_phy_char(pc):
+    
     return PhysicalCharacteristics.objects.create(
-        color=pc.get("color"),
+        color=" ".join(re.findall('[A-Z][^A-Z]*',pc.get("color") or "")),
         skin_type=pc.get("skin type"),
         top_speed=pc.get("top speed"),
         lifespan=pc.get("lifespan"),

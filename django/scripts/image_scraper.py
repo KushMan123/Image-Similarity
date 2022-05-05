@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 def main():
     driver = selenium.webdriver.Chrome("./scripts/chromedriver")
 
-    path = os.path.join(os.getcwd(), "..", "AnimalData", "images")
+    path = os.path.join(os.getcwd(), "..", "AnimalData")
     
     for animal in os.listdir(path):
         if os.path.isdir(os.path.join(path, animal)):
@@ -17,11 +17,11 @@ def main():
 
         name = animal.split(".")[0]
 
-        dirpath = os.path.join(path, name)
+        dirpath = os.path.join(path, "animalImages", name)
         if not os.path.exists(dirpath):
             os.mkdir(dirpath)
         else:
-            if os.listdir():
+            if os.listdir(dirpath):
                 continue
 
         driver.get(f"https://unsplash.com/s/photos/{name}")

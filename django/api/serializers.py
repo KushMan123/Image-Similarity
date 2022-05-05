@@ -51,7 +51,7 @@ class ClassificationSerializer(serializers.ModelSerializer):
     order = OrderSerializer()
     genus = GenusSerializer()
     family = FamilySerializer()
-    scientific_name = ScientificNameSerializer
+    scientific_name = ScientificNameSerializer()
     class Meta:
         model = Classification
         fields = '__all__'
