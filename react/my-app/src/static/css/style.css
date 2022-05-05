@@ -30,7 +30,7 @@ body {
 	grid-gap: 20px;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	padding: 30px;
+	padding: 1.875rem;
 	overflow-x: hidden;
 }
 /* Grid-Items */

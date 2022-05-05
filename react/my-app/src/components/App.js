@@ -41,7 +41,6 @@ const App = () => {
 			fetch("http://127.0.0.1:8000/api/animals/")
 				.then((response) => response.json())
 				.then((data) => {
-					console.log(data[0]);
 					setResponseData(data[0]);
 					setisLoading(false);
 				});

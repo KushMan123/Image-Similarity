@@ -100,8 +100,8 @@ class PhysicalCharacteristics(models.Model):
     weight = models.CharField(max_length=50, null=True, blank=True)
     height = models.CharField(max_length=50, null=True, blank=True)
    
-    def __str__(self):
-        return self.animal.name
+    # def __str__(self):
+    #     return self.animal.name
 
 
 class Location(models.Model):
