@@ -53,7 +53,6 @@ class ScientificName(models.Model):
         return self.name
 
 class Classification(models.Model):
-    classification_for = models.CharField(max_length=50, null=True, blank=True)
     kingdom = models.ForeignKey(Kingdom, on_delete=models.DO_NOTHING, null=True, blank=True)
     phylum = models.ForeignKey(Phylum, on_delete=models.DO_NOTHING, null=True, blank=True)
     class_name = models.ForeignKey(ClassName, on_delete=models.DO_NOTHING, null=True, blank=True)
@@ -63,8 +62,7 @@ class Classification(models.Model):
     scientific_name = models.ForeignKey(ScientificName, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     def __str__(self):
-        if self.classification_for is not None:
-            return self.classification_for
+        return self.animal.name
 
 
 class ConservationStatus(models.Model):
@@ -78,24 +76,22 @@ class ConservationStatus(models.Model):
 
 
 class Fact(models.Model):
-    facts_for = models.CharField(max_length=50, null=True, blank=True)
-    prey = models.CharField(max_length=50, null=True, blank=True)
-    distinct_feature = models.CharField(max_length=50, null=True, blank=True)
-    habitat = models.CharField(max_length=50, null=True, blank=True)
-    diet = models.CharField(max_length=50, null=True, blank=True)
-    average_litter_size = models.CharField(max_length=50, null=True, blank=True)
-    lifestyle = models.CharField(max_length=50, null=True, blank=True)
-    favourite_food = models.CharField(max_length=50, null=True, blank=True)
-    group = models.CharField(max_length=50, null=True, blank=True)
-    name_of_young = models.CharField(max_length=50, null=True, blank=True)
-    group_behavior = models.CharField(max_length=50, null=True, blank=True)
+    prey = models.CharField(max_length=100, null=True, blank=True)
+    distinct_feature = models.CharField(max_length=100, null=True, blank=True)
+    habitat = models.CharField(max_length=100, null=True, blank=True)
+    diet = models.CharField(max_length=100, null=True, blank=True)
+    average_litter_size = models.CharField(max_length=100, null=True, blank=True)
+    lifestyle = models.CharField(max_length=100, null=True, blank=True)
+    favourite_food = models.CharField(max_length=100, null=True, blank=True)
+    group = models.CharField(max_length=100, null=True, blank=True)
+    name_of_young = models.CharField(max_length=100, null=True, blank=True)
+    group_behavior = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
-        return self.facts_for
+        return self.animal.name
 
 
 class PhysicalCharacteristics(models.Model):
-    characters_of = models.CharField(max_length=50, null=True, blank=True)
     color = models.CharField(max_length=50, null=True, blank=True)
     skin_type = models.CharField(max_length=50, null=True, blank=True)
     top_speed = models.CharField(max_length=50, null=True, blank=True)
@@ -103,8 +99,8 @@ class PhysicalCharacteristics(models.Model):
     weight = models.CharField(max_length=50, null=True, blank=True)
     height = models.CharField(max_length=50, null=True, blank=True)
    
-    def __str__(self):
-        return self.characters_of
+    # def __str__(self):
+    #     return self.animal.name
 
 
 class Location(models.Model):
@@ -121,10 +117,11 @@ class Animal(models.Model):
     conservation_status = models.ForeignKey(ConservationStatus, on_delete=models.DO_NOTHING, null=True, blank=True)
     facts = models.OneToOneField(Fact, on_delete=models.DO_NOTHING, null=True, blank=True)
     location = models.ManyToManyField(Location)
-    # image = models.ForeignKey(Image, on_delete=models.DO_NOTHING, null=True, blank=True)
+    physical_characteristics = models.OneToOneField(PhysicalCharacteristics, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     def __str__(self):
         return self.name
+
 
     @property
     def locations(self):
@@ -137,7 +134,7 @@ class Image(models.Model):
     animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING, null=True, blank=True)
 
     def __str__(self):
-        return self.animal
+        return self.animal.name
 
 # class AnimalLocation(models.Model):
 #     animal = models.ForeignKey(Animal, on_delete=models.DO_NOTHING, null=True, blank=True)
