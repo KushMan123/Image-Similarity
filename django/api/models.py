@@ -92,7 +92,7 @@ class Fact(models.Model):
 
 
 class PhysicalCharacteristics(models.Model):
-    color = models.CharField(max_length=50, null=True, blank=True)
+    color = models.CharField(max_length=100, null=True, blank=True)
     skin_type = models.CharField(max_length=50, null=True, blank=True)
     top_speed = models.CharField(max_length=50, null=True, blank=True)
     lifespan = models.CharField(max_length=50, null=True, blank=True)
