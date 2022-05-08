@@ -8,11 +8,11 @@ import os
 from rest_framework.response import Response
 import numpy as np
 
-# model_graph = Graph()
-# with model_graph.as_default():
-#     tf_session = tf.compat.v1.Session()
-#     with tf_session.as_default():
-#         animalmodel = load_model('./models/MobileNetModelImagenet.h5')
+model_graph = Graph()
+with model_graph.as_default():
+    tf_session = tf.compat.v1.Session()
+    with tf_session.as_default():
+        animalmodel = load_model('./models/MobileNetModelImagenet.h5')
         # similaritymodel = load_model("")
 
 valid_animals = [
@@ -71,8 +71,8 @@ def predict_similarity_scores(image):
     return scores, path
 
 def calculate_similarities(anchor, *positives):
-    result = []
-    for p in positives:
-        r = similaritymodel.predict((p, anchor))
-        result.append(r[0][0], p.url)
+    # result = []
+    # for p in positives:
+    #     r = similaritymodel.predict((p, anchor))
+    #     result.append(r[0][0], p.url)
     return positives[0].url

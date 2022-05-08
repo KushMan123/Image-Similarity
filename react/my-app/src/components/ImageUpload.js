@@ -32,6 +32,7 @@ const ImageUpload = (props) => {
 			let valueStore = e.target.value.match(regExp);
 			fileRef.current.innerHTML = valueStore;
 		}
+		props.handleFile(file)
 	}
 
 	function handleCustomBtn(e) {

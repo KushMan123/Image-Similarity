@@ -1,0 +1,8 @@
+cockroach`_T
+okapi	_T
+ox	_1
+oyster	_T
+seal	_1
+shark_1
+squid _T
+wombat _1

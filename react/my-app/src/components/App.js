@@ -13,6 +13,7 @@ import { Fragment } from "react";
 import ImageUpload from "./ImageUpload";
 import Button from "./Button";
 import Loading from "./Loading";
+import axios from "axios";
 
 const response = DataJson[0];
 
@@ -21,29 +22,42 @@ const App = () => {
 	const [isLoading, setisLoading] = useState(false);
 	const [responseData, setResponseData] = useState([]);
 	const [imageUploadStatus, setImageUploadStatus] = useState(false);
+	const [selectedFile, setSelectedFile] = useState(null);
+	const [animalName, setAnimalName] = useState("");
+
+	function fileHandler(file) {
+		console.log(file);
+		setSelectedFile(file);
+	}
 
 	function handleImageSrc(newValue) {
-		console.log(newValue);
 		setImageSrc(newValue);
-		console.log("Image Src", imageSrc);
 	}
 
 	function handleImageUploadStatus(newValue) {
-		console.log(newValue);
 		setImageUploadStatus(newValue);
-		console.log("Status", newValue);
 	}
 
 	function handleModelClick(e) {
 		console.log(imageUploadStatus);
 		if (imageUploadStatus) {
 			setisLoading(true);
-			fetch("http://127.0.0.1:8000/api/animals/")
-				.then((response) => response.json())
-				.then((data) => {
-					setResponseData(data[0]);
-					setisLoading(false);
-				});
+			const body = new FormData();
+			body.append("file", selectedFile);
+			axios.post("http://127.0.0.1:8000/api/animalimage/", body).then((res) => {
+				const classLabel = Object.keys(res.data);
+				setAnimalName(classLabel[0]);
+				const similartyPercent = [];
+				for (let i = 0; i < classLabel.length; i++) {
+					let data = {
+						class: classLabel[i],
+						percent: res.data[classLabel[i]]*100,
+					};
+					similartyPercent.push(data);
+				}
+				setResponseData(similartyPercent)
+				setisLoading(false)
+			});
 		}
 	}
 
@@ -53,7 +67,8 @@ const App = () => {
 				<OuterContainer>
 					<ImageUpload
 						handleFunction={handleImageSrc}
-						handleStatus={handleImageUploadStatus}>
+						handleStatus={handleImageUploadStatus}
+						handleFile={fileHandler}>
 						<Button
 							id='model-btn'
 							name='Get my Animal'
@@ -72,13 +87,14 @@ const App = () => {
 			} else {
 				return (
 					<GridContainer>
-						<ImageViewer imageSrc={imageSrc} animalName={responseData.name} />
-						<AdditionalDescription />
+						<ImageViewer imageSrc={imageSrc} animalName={animalName} />
+						<AdditionalDescription animalName={animalName}/>
 						<Description
-							detail={responseData.description}
-							status={responseData.conservation_status.status}
+							// detail={responseData.description}
+							// status={responseData.conservation_status.status}
+							animalName={animalName}
 						/>
-						<ClassSimilarity data={response["Class-Similarity"]} />
+						<ClassSimilarity data={responseData} />
 						<ImageSimilarity data={response["Image-Similarity"]} />
 					</GridContainer>
 				);

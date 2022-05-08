@@ -3,15 +3,17 @@ import DescriptionContent from "./DescriptionContent";
 import DescriptionHeading from "./DescriptionHeading";
 import Loading from "./Loading";
 
-const AdditionalDescription = () => {
+const AdditionalDescription = (props) => {
 	const [responseData, setResponseData] = useState([]);
 	const [jsonData, setJsonData] = useState([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch("http://127.0.0.1:8000/api/animals/");
+			const response = await fetch(
+				`http://127.0.0.1:8000/api/animal/${props.animalName}`
+			);
 			const json = await response.json();
-			setJsonData(json[0]);
+			setJsonData(json);
 		};
 		fetchData().catch(console.error);
 	}, []);
@@ -24,7 +26,7 @@ const AdditionalDescription = () => {
 				Physical: [],
 				Facts: [],
 				Location: [],
-				"Location Image": "",
+				locationimage: "",
 			};
 			additionalDescription.Scientific = transformResponse(
 				jsonData.classification,
@@ -38,6 +40,7 @@ const AdditionalDescription = () => {
 			for (let i = 0; i < jsonData.location.length; i++) {
 				additionalDescription.Location.push(jsonData.location[i].name);
 			}
+			additionalDescription.locationimage=`http://127.0.0.1:8000${jsonData.locationimage}`
 			setResponseData(additionalDescription);
 		}
 	}, [jsonData]);
@@ -72,6 +75,7 @@ const AdditionalDescription = () => {
 				</div>
 			);
 		} else {
+			console.log(responseData)
 			return (
 				<div className='item add-description'>
 					<div className='heading'>Additional Information</div>
@@ -142,7 +146,7 @@ const AdditionalDescription = () => {
 									</div>
 								</div>
 								<div class='image'>
-									<img src={responseData["Location Image"]} />
+									<img src={responseData.locationimage} />
 								</div>
 							</DescriptionHeading>
 						</div>
