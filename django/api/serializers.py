@@ -5,44 +5,37 @@ from .models import *
 class KingdomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kingdom
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class PhylumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Phylum
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class ClassNameSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClassName
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class GenusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Genus
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class FamilySerializer(serializers.ModelSerializer):
     class Meta:
         model = Family
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class ScientificNameSerializer(serializers.ModelSerializer):
     class Meta:
         model = ScientificName
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class ClassificationSerializer(serializers.ModelSerializer):
     kingdom = KingdomSerializer()
@@ -54,30 +47,27 @@ class ClassificationSerializer(serializers.ModelSerializer):
     scientific_name = ScientificNameSerializer()
     class Meta:
         model = Classification
-        fields = '__all__'
-
-
+        exclude = ("id", )
 
 class ConservationStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = ConservationStatus
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class FactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fact
-        fields = '__all__'
+        exclude = ("id", )
 
 class PhysicalCharacteristicsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PhysicalCharacteristics
-        fields = '__all__'
+        exclude = ("id", )
 
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
-        fields = '__all__'
+        exclude = ("id", )
 
 
 class AnimalSerializer(serializers.ModelSerializer):
@@ -89,10 +79,9 @@ class AnimalSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Animal
-        fields = '__all__'
-
+        exclude = ("id", )
 
 class ImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Image
-        fields = '__all__'
+        exclude = ("id", )
