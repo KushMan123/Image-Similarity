@@ -24,7 +24,7 @@ def animal_info(request, animal):
 
 @api_view(['GET'])
 def similar_animal(request, animal):
-        positives = [p.image for p in Image.objects.filter(animal__name=animal)[:2]]
+        positives = [p.image for p in Image.objects.filter(animal__name=animal)[:3]]
         imgpath = request.session["filepk"]
         with open("."+imgpath) as f:
             anchor = File(f)

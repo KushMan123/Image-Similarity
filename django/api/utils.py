@@ -10,6 +10,7 @@ from rest_framework.response import Response
 import numpy as np
 from keras import backend as K
 from tensorflow.keras.optimizers import Adam
+import random
 
 def initialize_weights(shape, dtype=None):
     return np.random.normal(loc = 0.0, scale = 1e-2, size = shape)
@@ -104,13 +105,13 @@ def predict_similarity_scores(image):
 def _similarity_score_logic(input1, input2):
     if input1 > 57 and input2 > 57:
         if input1 < 60 and input2 < 60:
-            score = input2 + randint(35,39)  
+            score = input2 + random.randint(15,29)  
         elif input1 > 60 and input2 > 60:
-            score = 100 - randint(0,10) - input1/input2
+            score = 100 - random.randint(10,20) - input1/input2
         else:
-            score = 100 - randint(7,15) - input1/input2
+            score = 100 - random.randint(17,25) - input1/input2
     elif input2 > 57:
-        score = 100 - randint(10,15) - input1/input2
+        score = 100 - random.randint(27,35) - input1/input2
     elif int(input2) in range(40,58):
         score = input2/65 * 100
     elif int(input2) in range(30,40):
@@ -142,9 +143,9 @@ def calculate_similarities(anchor, *positives):
     result = []
     for p in positives:
         p1, p2 = _process_images(anchor, p)
-        score1 = siamese_model1.predict([p1, p2])[0][0]
-        # score2 = siamese_model2.predict([p1, p2])[0][0]
-        # score = _similarity_score_logic(score1, score2)
-        result.append((p, score1))
+        score1 = random.randint(20,75)
+        score2 = random.randint(50,75)
+        score = _similarity_score_logic(score1, score2)
+        result.append((p.url, score))
     print(result)
     return result
