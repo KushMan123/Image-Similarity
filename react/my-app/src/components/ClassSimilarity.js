@@ -8,12 +8,6 @@ const ClassSimilarity = (props) => {
 			<div className='horizontal-chart'>
 				{props.data.map((data, key) => {
 					console.log(data);
-					if (data.percent < 0.1) {
-						data.percent = data.percent * 100 + 20;
-					}
-					if (data.percent < 10) {
-						data.percent = data.percent + 20;
-					}
 					return (
 						<HorizontalChart
 							label={data.class}

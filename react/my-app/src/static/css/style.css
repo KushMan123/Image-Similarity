@@ -235,7 +235,12 @@ body {
 	background: var(--blue-gradient);
 }
 
-.bar-inner:after {
+.bar-value {
+	flex: 0.15;
+	font-weight: 500;
+}
+
+/* .bar-inner:after {
 	position: absolute;
 	right: 1.5rem;
 	content: attr(data-percent);
@@ -243,7 +248,7 @@ body {
 	color: #fff;
 	font-weight: 700;
 	font-size: 14px;
-}
+} */
 
 .image-sim {
 	position: relative;

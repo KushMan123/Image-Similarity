@@ -40,7 +40,7 @@ const AdditionalDescription = (props) => {
 			for (let i = 0; i < jsonData.location.length; i++) {
 				additionalDescription.Location.push(jsonData.location[i].name);
 			}
-			additionalDescription.locationimage=`http://127.0.0.1:8000${jsonData.locationimage}`
+			additionalDescription.locationimage = `http://127.0.0.1:8000${jsonData.locationimage}`;
 			setResponseData(additionalDescription);
 		}
 	}, [jsonData]);
@@ -52,7 +52,10 @@ const AdditionalDescription = (props) => {
 		for (let i = 1; i < label.length; i++) {
 			const str = label[i].split("_").join(" ");
 			if (hasName) {
-				value = object[label[i]].name;
+				value = object[label[i]];
+				if (value != null) {
+					value = object[label[i]].name;
+				}
 			} else {
 				value = object[label[i]];
 			}
@@ -75,7 +78,7 @@ const AdditionalDescription = (props) => {
 				</div>
 			);
 		} else {
-			console.log(responseData)
+			console.log(responseData);
 			return (
 				<div className='item add-description'>
 					<div className='heading'>Additional Information</div>

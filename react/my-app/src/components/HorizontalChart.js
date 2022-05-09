@@ -16,6 +16,7 @@ const HorizontalChart = (props) => {
 					data-percent={`${props.percent}%`}
 					ref={barInner}></div>
 			</div>
+			<div className="bar-value">{`${Number.parseInt(props.percent).toFixed(2)}%`}</div>
 		</div>
 	);
 };
