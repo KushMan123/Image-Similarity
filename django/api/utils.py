@@ -42,7 +42,7 @@ with model_graph.as_default():
 # siamese_model1 = tf.keras.models.load_model('./models/siamese_model2_h5.h5', compile=False)
 
         siamese_model1 =  tf.keras.models.load_model('./models/saved_model_siamese', compile=False, custom_objects = {'euclidean_distance': euclidean_distance})
-        optimizer = Adam(learning_rate = 0.0001)
+        optimizer = tf.keras.optimizers.Adam(learning_rate = 0.0001)
         siamese_model1.compile(loss=contrastive_loss,optimizer=optimizer, metrics = ['accuracy'])
         # siamese_model2.compile(loss=contrastive_loss,optimizer=optimizer, metrics = ['accuracy'])
 
