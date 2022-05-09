@@ -9,7 +9,7 @@ import os
 from rest_framework.response import Response
 import numpy as np
 from keras import backend as K
-from tensorflow.keras.optimizers import Adam
+# from tf.keras.optimizers import Adam
 import random
 
 def initialize_weights(shape, dtype=None):
